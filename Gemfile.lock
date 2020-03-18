@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    tracery (0.7.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  tracery
+
+BUNDLED WITH
+   2.1.4
