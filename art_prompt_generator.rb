@@ -4,19 +4,23 @@ require 'mods-eng-basic'
 include Tracery
 
 def adjective
-    ['greasy', 'scary', 'bad', 'ugly', 'pretty', 'cute', 'fat']
+    ['greasy', 'scary', 'bad', 'ugly', 'pretty', 'cute', 'fat', 'sweet', 'spicy']
 end
 
 def adverb
-    ['slowly', 'sadly', 'quickly']
+    ['slowly', 'sadly', 'quickly', 'blindly']
 end
 
 def noun
-    ['bubble', 'plant', 'chair', 'window', 'building', 'germ', 'cat', 'square']
+    ['bubble', 'plant', 'chair', 'window', 'building', 'germ', 'cat', 'square', 'rug', 'tub', 'fart']
 end
 
 def verb
-    ['run', 'kill', 'eat', 'rock']
+    ['run', 'kill', 'eat', 'rock', 'jump', 'climb', 'spill', 'fill', 'squirt']
+end
+
+def past_tense_verb
+    ['died', 'lived', 'ran', 'jumped', 'creamed', 'sreamed', 'ate', 'pumped']
 end
 
 def superlative
@@ -24,7 +28,7 @@ def superlative
 end
 
 def name
-    ['bob', 'anthony', 'devin', 'alex', 'robert', 'michael']
+    ['bob', 'anthony', 'devin', 'alex', 'robert', 'michael', 'gerald', 'jerry', 'phil', 'cody', 'nik']
 end
 
 grammar = createGrammar(
@@ -44,9 +48,9 @@ grammar = createGrammar(
             '[art_type:poster][media_type:movie,show][prompt:#video_prompt#]',
             '[art_type:game cartridge,game case,game title screen][media_type:game][prompt:#game_prompt#]',
             '[art_type:album cover][media_type:album][prompt:#album_prompt#]',
-            '[art_type:show poster][media_type:band][prompt:#_prompt#]',
+            '[art_type:show poster][media_type:band][prompt:#show_prompt#]',
             '[art_type:abstract art][media_type:painting][prompt:#abstract_prompt#]',
-            '[art_type:museum painting][media_type:painting][prompt:#_prompt#]',
+            '[art_type:museum painting,painting][media_type:painting][prompt:#painting_prompt#]',
             '[art_type:quick doodle,sketch,blind contour][media_type:doodle][prompt:#sketch_prompt#]',
             '[art_type:lot of][media_type:many][prompt:#many_prompt#]',
             '[art_type:comic,four panel comic,three panel comic,two panel comic][media_type:comic][prompt:#comic_prompt#]',
@@ -54,7 +58,10 @@ grammar = createGrammar(
         ],
         generic_prompts: [
             '#for_of# #media_type.a# that looks #adjective#',
-            '#for_of# #media_type.a# about #story#'
+            '#for_of# #media_type.a# about #story#',
+            'about the #superlative# #noun#',
+            'about a #collection# of #noun.s#',
+            'about the #media_type# #verb.capitalize#-#noun.capitalize.s#'
         ],
         video_prompt: [
             '#generic_prompts#'
@@ -66,10 +73,17 @@ grammar = createGrammar(
             'for a band about to #verb#',
             'for the #superlative# #media_type#'
         ],
+        show_prompt: [
+            'for the band #verb.capitalize#-#noun.capitalize.s#'
+        ],
         abstract_prompt: [
             'about the #sense# of #noun.s#',
             'about #collection.a# of #noun.s#',
-            'about #story# and #story#'
+            'about #story# and #story#',
+            'about two #noun.s# in love'
+        ],
+        painting_prompt: [
+            'about a massacre of #noun.s#'
         ],
         sketch_prompt: [
             'of #noun.a#',
@@ -103,11 +117,12 @@ grammar = createGrammar(
         for_of: ['for', 'of'],
         who_that: ['who', 'that'],
         sense: ['smell', 'taste', 'sound'],
-        collection: ['herd', 'gathering', 'group', 'lot', 'army', 'pile', 'collection'],
+        collection: ['herd', 'gathering', 'group', 'lot', 'army', 'pile', 'collection', 'couple'],
         adjective: adjective,
         adverb: adverb,
         noun: noun,
         verb: verb,
+        past_tense_verb: past_tense_verb,
         superlative: superlative,
         name: name
     }
