@@ -152,13 +152,16 @@ var grammar = createGrammar(
   }
 )
 
-
-
 grammar.addModifiers(baseEngModifiers); 
+
+function refreshPage(){ 
+  window.location.reload(); 
+}
 
 ReactDOM.render(
   <React.StrictMode>
   <h1>{grammar.flatten('#origin#')}</h1>
+  <button onClick={refreshPage}>Generate</button>
   </React.StrictMode>,
   document.getElementById('root')
 );
