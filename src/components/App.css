@@ -1,0 +1,41 @@
+.prompt-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 50vh;
+  justify-content: flex-start;
+  width: 100vw;
+}
+
+.prompt {
+  color: #d2fafb;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 4px 4px #00000055;
+  width: 90%;
+}
+
+.generate {
+  background-color: #fe346e;
+  border-radius: 2px;
+  border-width: 0px;
+  box-shadow: 4px 4px #00000055;
+  color: #2c003e;
+  cursor: pointer;
+  display: block;
+  font-size: 20px;
+  margin: auto;
+  outline: none;
+  padding: 10px;
+  transition-duration: 0.3s;
+}
+
+.generate:hover {
+  transform: scale(1.1);
+  transition-duration: 0.15s;
+}
+
+.generate:active {
+  transform: scale(0.85);
+  transition-duration: 0.05s;
+}

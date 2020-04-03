@@ -52,7 +52,11 @@ export function getGrammar() {
       'for the #superlative# #media_type#',
       'for the #media_type# #title#'
     ],
-    show_prompt: ['for the band #title#'],
+    show_prompt: [
+      'for the #media_type.a# #title#',
+      '#for_of# #adjective.a# #music_genre# #media_type#',
+      '#for_of# #media_type.a# that was kicked off stage for #action_verb#'
+    ],
     abstract_prompt: [
       'about the #sense# of #noun.s#',
       'about #collection.a# of #noun.s#',
@@ -63,7 +67,8 @@ export function getGrammar() {
       'about a massacre of #noun.s#',
       'about #adjective# fruit',
       'about the battle of #title#',
-      'about love in #adjective.a# time'
+      'about love in #adjective.a# time',
+      'about a panorama of #noun.s#'
     ],
     sketch_prompt: [
       'of #noun.a#',
@@ -77,12 +82,14 @@ export function getGrammar() {
       'about your day today',
       'about your favorite memory',
       'about the #superlative# thing that ever happened to you',
-      'about a bond between #noun# and #noun#'
+      'about a bond between #noun# and #noun#',
+      'about something that bothers you'
     ],
     book_prompt: [
       '#generic_prompts#',
       'that you would find in #adjective.a# library',
-      'that you would find in the ruins of the temple of #title#'
+      'that you would find in the ruins of the temple of #title#',
+      'of #adjective.a# #media_type# about #noun.s#'
     ],
     story: [
       'the life of #name.capitalize#',
@@ -94,14 +101,17 @@ export function getGrammar() {
       '#noun.a# #who_that# becomes #noun.a#'
     ],
     title: [
-      '#verb.capitalize#-#noun.capitalize.s#',
-      '#noun.capitalize##noun.capitalize#',
-      '#number.capitalize# #noun.capitalize.s#',
-      '#noun.capitalize# #verb.capitalize#',
-      "#name.capitalize#'s #noun.capitalize#"
+      '#verb.capitalize##space_dash##noun.capitalize.s#',
+      '#noun.capitalize##space_dash##noun.capitalize#',
+      '#number.capitalize##space_dash##noun.capitalize.s#',
+      '#noun.capitalize##space_dash##verb.capitalize#',
+      "#name.capitalize#'s #noun.capitalize#",
+      '#action_verb.capitalize##space_dash##noun.capitalize#',
+      '#adjective.capitalize##space_dash##noun.capitalize#'
     ],
     for_of: ['for', 'of'],
     who_that: ['who', 'that'],
+    space_dash: [' ', '', '-'],
     sense: ['smell', 'taste', 'sound'],
     collection: [
       'herd',
@@ -167,6 +177,7 @@ export function getGrammar() {
       'fantasy',
       'animation'
     ],
+    music_genre: ['punk', 'rock', 'indie', 'jazz', 'soul', 'rap', 'country'],
     adjective: adjectives,
     adverb: ['slowly', 'sadly', 'quickly', 'blindly'],
     noun: nouns,
