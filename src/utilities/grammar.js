@@ -48,9 +48,9 @@ export function getGrammar() {
       'about having super #action_verb# powers'
     ],
     album_prompt: [
-      'for a band about to #verb#',
       'for the #superlative# #media_type#',
-      'for the #media_type# #title#'
+      'for the #media_type# #title#',
+      'for #music_genre.a# band'
     ],
     show_prompt: [
       'for the #media_type.a# #title#',
@@ -74,7 +74,8 @@ export function getGrammar() {
       'of #noun.a#',
       'of many #many_prompt#',
       'of something you can see right now',
-      'of your favorite childhood memory'
+      'of your favorite childhood memory',
+      'of a nearby person'
     ],
     many_prompt: ['#noun.s#', '#adjective# #noun.s#', '#noun.s# and #noun.s#'],
     comic_prompt: [
@@ -97,7 +98,6 @@ export function getGrammar() {
       '#noun.a#',
       '#noun.s#',
       '#name.capitalize# the #adjective#',
-      '#name.capitalize# the #adjective# and #adjective#',
       '#noun.a# #who_that# becomes #noun.a#'
     ],
     title: [
