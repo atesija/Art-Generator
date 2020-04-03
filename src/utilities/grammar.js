@@ -2,6 +2,8 @@ import { createGrammar, baseEngModifiers } from 'tracery-grammar';
 import adjectives from '../constants/words/adjectives';
 import nouns from '../constants/words/nouns';
 import verbs from '../constants/words/verbs';
+import names from '../constants/words/names';
+import verbing from '../constants/words/verbing';
 
 export function getGrammar() {
   const result = createGrammar({
@@ -69,11 +71,7 @@ export function getGrammar() {
       'of something you can see right now',
       'of your favorite childhood memory'
     ],
-    many_prompt: [
-      '#noun.s#',
-      '#adjective# #noun.s#',
-      '#adjective#, #adjective# #noun.s#'
-    ],
+    many_prompt: ['#noun.s#', '#adjective# #noun.s#', '#noun.s# and #noun.s#'],
     comic_prompt: [
       'about #story#',
       'about your day today',
@@ -174,30 +172,9 @@ export function getGrammar() {
     noun: nouns,
     verb: verbs,
     past_tense_verb: ['puked', 'jumped', 'killed'],
-    action_verb: [
-      'running',
-      'killing',
-      'eating',
-      'flying',
-      'dying',
-      'moaning',
-      'barfing',
-      'driving'
-    ],
+    action_verb: verbing,
     superlative: ['best', 'worst', 'coolest', 'fastest'],
-    name: [
-      'bob',
-      'anthony',
-      'devin',
-      'alex',
-      'robert',
-      'michael',
-      'gerald',
-      'jerry',
-      'phil',
-      'cody',
-      'nik'
-    ]
+    name: names
   });
 
   result.addModifiers(baseEngModifiers);
