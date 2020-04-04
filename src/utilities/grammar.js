@@ -177,7 +177,18 @@ export function getGrammar() {
       'fantasy',
       'animation'
     ],
-    music_genre: ['punk', 'rock', 'indie', 'jazz', 'soul', 'rap', 'country'],
+    music_genre: [
+      'blues',
+      'country',
+      'indie',
+      'jazz',
+      'noise',
+      'punk',
+      'rap',
+      'rock',
+      'soul',
+      'electronic'
+    ],
     adjective: adjectives,
     adverb: ['slowly', 'sadly', 'quickly', 'blindly'],
     noun: nouns,

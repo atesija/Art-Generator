@@ -42,6 +42,10 @@
 
 @media screen and (max-width: 600px) {
   .prompt-container {
-    height: 70vh;
+    height: 60vh;
+  }
+
+  .prompt {
+    font-size: 30px;
   }
 }
