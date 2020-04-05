@@ -4,6 +4,8 @@ import nouns from '../constants/words/nouns';
 import verbs from '../constants/words/verbs';
 import names from '../constants/words/names';
 import verbing from '../constants/words/verbing';
+import verbPast from '../constants/words/verbPast';
+import verbSingular from '../constants/words/verbSingular';
 
 export function getGrammar() {
   const result = createGrammar({
@@ -16,11 +18,11 @@ export function getGrammar() {
       '[art_type:album cover][media_type:album][prompt:#album_prompt#]',
       '[art_type:show poster][media_type:band][prompt:#show_prompt#]',
       '[art_type:abstract art][media_type:painting][prompt:#abstract_prompt#]',
-      '[art_type:museum painting,painting][media_type:painting][prompt:#painting_prompt#]',
+      '[art_type:museum painting,painting,mural][media_type:painting][prompt:#painting_prompt#]',
       '[art_type:quick doodle,sketch,blind contour][media_type:doodle][prompt:#sketch_prompt#]',
       '[art_type:lot of,ton of,few][media_type:many][prompt:#many_prompt#]',
-      '[art_type:comic,four panel comic,three panel comic,two panel comic][media_type:comic][prompt:#comic_prompt#]',
-      '[art_type:book cover,book spine][media_type:book][prompt:#book_prompt#]'
+      '[art_type:comic,#comic_panel_length# panel comic][media_type:comic][prompt:#comic_prompt#]',
+      '[art_type:book cover,book spine][media_type:book][prompt:#book_prompt#]',
     ],
     generic_prompts: [
       '#for_of# #media_type.a# that looks #adjective#',
@@ -29,13 +31,15 @@ export function getGrammar() {
       'about the #superlative# #noun#',
       'about #collection.a# of #noun.s#',
       'about the #media_type# #title#',
-      '#for_of# #adjective.a# #media_type#'
+      '#for_of# #adjective.a# #media_type#',
+      'about someone who #verbPast# #noun.a#',
     ],
     video_prompt: [
       '#generic_prompts#',
       'about #noun.a# heist',
       'about a space ship plagued with #noun.s#',
-      '#for_of# #movie_genre.a# #media_type# about #noun.s#'
+      '#for_of# #movie_genre.a# #media_type# about #noun.s#',
+      'about the space ship #number#-#number# finding planet #noun#',
     ],
     game_prompt: [
       '#generic_prompts#',
@@ -45,37 +49,37 @@ export function getGrammar() {
       'for #game_genre.a# #media_type#',
       'for #game_genre.a# #game_genre# #media_type#',
       'for #game_genre.a# #game_genre# #media_type# about #noun.s#',
-      'about having super #action_verb# powers'
+      'about having super #verbing# powers',
     ],
     album_prompt: [
       'for the #superlative# #media_type#',
       'for the #media_type# #title#',
-      'for #music_genre.a# band'
+      'for #music_genre.a# band',
     ],
     show_prompt: [
       'for the #media_type.a# #title#',
       '#for_of# #adjective.a# #music_genre# #media_type#',
-      '#for_of# #media_type.a# that was kicked off stage for #action_verb#'
+      '#for_of# #media_type.a# that was kicked off stage for #verbing#',
     ],
     abstract_prompt: [
       'about the #sense# of #noun.s#',
       'about #collection.a# of #noun.s#',
       'about #story# and #story#',
-      'about two #noun.s# in love'
+      'about two #noun.s# in love',
     ],
     painting_prompt: [
       'about a massacre of #noun.s#',
       'about #adjective# fruit',
       'about the battle of #title#',
       'about love in #adjective.a# time',
-      'about a panorama of #noun.s#'
+      'about a panorama of #noun.s#',
     ],
     sketch_prompt: [
       'of #noun.a#',
       'of many #many_prompt#',
       'of something you can see right now',
       'of your favorite childhood memory',
-      'of a nearby person'
+      'of a nearby person',
     ],
     many_prompt: ['#noun.s#', '#adjective# #noun.s#', '#noun.s# and #noun.s#'],
     comic_prompt: [
@@ -84,21 +88,21 @@ export function getGrammar() {
       'about your favorite memory',
       'about the #superlative# thing that ever happened to you',
       'about a bond between #noun# and #noun#',
-      'about something that bothers you'
+      'about something that bothers you',
     ],
     book_prompt: [
       '#generic_prompts#',
       'that you would find in #adjective.a# library',
       'that you would find in the ruins of the temple of #title#',
-      'of #adjective.a# #media_type# about #noun.s#'
+      'of #adjective.a# #media_type# about #noun.s#',
     ],
     story: [
       'the life of #name.capitalize#',
-      '#noun.a# #who_that# #past_tense_verb#',
+      '#noun.a# #who_that# #verbPast#',
       '#noun.a#',
       '#noun.s#',
       '#name.capitalize# the #adjective#',
-      '#noun.a# #who_that# becomes #noun.a#'
+      '#noun.a# #who_that# becomes #noun.a#',
     ],
     title: [
       '#verb.capitalize##space_dash##noun.capitalize.s#',
@@ -106,8 +110,8 @@ export function getGrammar() {
       '#number.capitalize##space_dash##noun.capitalize.s#',
       '#noun.capitalize##space_dash##verb.capitalize#',
       "#name.capitalize#'s #noun.capitalize#",
-      '#action_verb.capitalize##space_dash##noun.capitalize#',
-      '#adjective.capitalize##space_dash##noun.capitalize#'
+      '#verbing.capitalize##space_dash##noun.capitalize#',
+      '#adjective.capitalize##space_dash##noun.capitalize#',
     ],
     for_of: ['for', 'of'],
     who_that: ['who', 'that'],
@@ -121,7 +125,8 @@ export function getGrammar() {
       'army',
       'pile',
       'collection',
-      'couple'
+      'couple',
+      'pair',
     ],
     number: [
       'zero',
@@ -133,8 +138,9 @@ export function getGrammar() {
       'six',
       'seven',
       'eight',
-      'nine'
+      'nine',
     ],
+    comic_panel_length: ['two', 'three', 'four', 'five', 'six'],
     game_genre: [
       'action',
       'shooter',
@@ -161,7 +167,7 @@ export function getGrammar() {
       'fighting',
       'racing',
       'card',
-      'puzzle'
+      'puzzle',
     ],
     movie_genre: [
       'comedy',
@@ -175,7 +181,7 @@ export function getGrammar() {
       'crime',
       'adventure',
       'fantasy',
-      'animation'
+      'animation',
     ],
     music_genre: [
       'blues',
@@ -187,16 +193,17 @@ export function getGrammar() {
       'rap',
       'rock',
       'soul',
-      'electronic'
+      'electronic',
     ],
     adjective: adjectives,
     adverb: ['slowly', 'sadly', 'quickly', 'blindly'],
     noun: nouns,
     verb: verbs,
-    past_tense_verb: ['puked', 'jumped', 'killed'],
-    action_verb: verbing,
+    verbPast: verbPast,
+    verbing: verbing,
+    verbSingular: verbSingular,
     superlative: ['best', 'worst', 'coolest', 'fastest'],
-    name: names
+    name: names,
   });
 
   result.addModifiers(baseEngModifiers);
