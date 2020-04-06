@@ -40,8 +40,31 @@
   transition-duration: 0.05s;
 }
 
+.credits {
+  position: absolute;
+  bottom: 1%;
+  right: 5%;
+  color: #d2fafb;
+  font-size: 16px;
+  text-shadow: 4px 4px #00000055;
+}
+
+.credits-link:link,
+.credits-link:visited {
+  color: #fe346e;
+}
+
+.credits-link:hover,
+.credits-link:active {
+  color: #d2fafb;
+}
+
 @media screen and (max-width: 600px) {
   .prompt {
     font-size: 30px;
+  }
+
+  .credits {
+    transform: translate(-999px, 0px);
   }
 }
