@@ -6,6 +6,8 @@ import names from '../constants/words/names';
 import verbing from '../constants/words/verbing';
 import verbPast from '../constants/words/verbPast';
 import verbSingular from '../constants/words/verbSingular';
+import adverbs from '../constants/words/adverbs';
+import specificThings from '../constants/words/specificThings';
 
 export function getGrammar() {
   const result = createGrammar({
@@ -55,6 +57,7 @@ export function getGrammar() {
       'for the #superlative# #media_type#',
       'for the #media_type# #title#',
       'for #music_genre.a# band',
+      'for #adjective.a# #music_genre# band',
     ],
     show_prompt: [
       'for the #media_type.a# #title#',
@@ -89,20 +92,34 @@ export function getGrammar() {
       'about the #superlative# thing that ever happened to you',
       'about a bond between #noun# and #noun#',
       'about something that bothers you',
+      'about #specificThings#',
     ],
     book_prompt: [
       '#generic_prompts#',
       'that you would find in #adjective.a# library',
       'that you would find in the ruins of the temple of #title#',
       'of #adjective.a# #media_type# about #noun.s#',
+      'for a story about #story#',
+      'a collection of short stories about #noun.s#',
+      'a set of #adjective# #media_type.s#',
+      'the biography of #title#',
+      'the biography of #name#',
     ],
     story: [
-      'the life of #name.capitalize#',
-      '#noun.a# #who_that# #verbPast#',
       '#noun.a#',
       '#noun.s#',
-      '#name.capitalize# the #adjective#',
       '#noun.a# #who_that# becomes #noun.a#',
+      '#descriptiveNoun.a# that #verbSingular# #noun.s#',
+      'an ode to #specificThings#',
+      '#specificThings#',
+      '#badStory#',
+    ],
+    badStory: [
+      '#name.capitalize# the #adjective#',
+      'the life of #name.capitalize#',
+      '#noun.a# #who_that# #verbPast#',
+      '#descriptiveNoun.a# #who_that# #verbPast#',
+      '#descriptiveNoun.a# #who_that# #adverb# #verbPast#',
     ],
     title: [
       '#verb.capitalize##space_dash##noun.capitalize.s#',
@@ -112,6 +129,8 @@ export function getGrammar() {
       "#name.capitalize#'s #noun.capitalize#",
       '#verbing.capitalize##space_dash##noun.capitalize#',
       '#adjective.capitalize##space_dash##noun.capitalize#',
+      'the one who #verbSingular#',
+      'the #descriptiveNoun# #who_that# #adverb# #verbPast#',
     ],
     for_of: ['for', 'of'],
     who_that: ['who', 'that'],
@@ -195,8 +214,25 @@ export function getGrammar() {
       'soul',
       'electronic',
     ],
+    descriptiveNoun: [
+      'person',
+      'human',
+      'king',
+      'queen',
+      'kid',
+      'child',
+      'boy',
+      'girl',
+      'man',
+      'woman',
+      'friend',
+      'dude',
+      'individual',
+      'folk',
+      'lover',
+    ],
     adjective: adjectives,
-    adverb: ['slowly', 'sadly', 'quickly', 'blindly'],
+    adverb: adverbs,
     noun: nouns,
     verb: verbs,
     verbPast: verbPast,
@@ -204,6 +240,7 @@ export function getGrammar() {
     verbSingular: verbSingular,
     superlative: ['best', 'worst', 'coolest', 'fastest'],
     name: names,
+    specificThings: specificThings,
   });
 
   result.addModifiers(baseEngModifiers);
