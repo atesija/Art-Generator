@@ -14,4 +14,12 @@ export default [
   'opening your window and feeling a breeze on a hot day',
   'crying so much that there are no more tears',
   'comfort food on a cold day',
+  'reading a book on a rainy day',
+  'seeing how green the world is after it rains',
+  'waiting for your food to come out',
+  'waking up early',
+  'sleeping in',
+  'the taste of your favorite food',
+  'taking a hot shower on a cold day',
+  'jumping in the ocean on a warm day',
 ];

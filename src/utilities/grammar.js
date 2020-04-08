@@ -29,6 +29,7 @@ export function getGrammar() {
     generic_prompts: [
       '#for_of# #media_type.a# that looks #adjective#',
       '#for_of# #media_type.a# about #story#',
+      'about #story#',
       '#for_of# #media_type.a# about #number# #noun.s#',
       'about the #superlative# #noun#',
       'about #collection.a# of #noun.s#',
@@ -39,9 +40,10 @@ export function getGrammar() {
     video_prompt: [
       '#generic_prompts#',
       'about #noun.a# heist',
-      'about a space ship plagued with #noun.s#',
+      'about an island plagued with #noun.s#',
       '#for_of# #movie_genre.a# #media_type# about #noun.s#',
       'about the space ship #number#-#number# finding planet #noun#',
+      'about the extinction of #noun.s#',
     ],
     game_prompt: [
       '#generic_prompts#',
@@ -52,30 +54,35 @@ export function getGrammar() {
       'for #game_genre.a# #game_genre# #media_type#',
       'for #game_genre.a# #game_genre# #media_type# about #noun.s#',
       'about having super #verbing# powers',
+      'for #game_genre.a# #media_type# about #specificThings#',
     ],
     album_prompt: [
       'for the #superlative# #media_type#',
       'for the #media_type# #title#',
       'for #music_genre.a# band',
       'for #adjective.a# #music_genre# band',
+      '#for_of# the album that caused #music_genre.a# band to get #verbPast#',
     ],
     show_prompt: [
       'for the #media_type.a# #title#',
       '#for_of# #adjective.a# #music_genre# #media_type#',
       '#for_of# #media_type.a# that was kicked off stage for #verbing#',
+      '#for_of# an indie #adjective# #media_type# trying to make it big',
+      '#for_of# #music_genre.a# #media_type# playing basement shows at midnight',
     ],
     abstract_prompt: [
       'about the #sense# of #noun.s#',
       'about #collection.a# of #noun.s#',
       'about #story# and #story#',
       'about two #noun.s# in love',
+      'about #specificThings#',
     ],
     painting_prompt: [
       'about a massacre of #noun.s#',
       'about #adjective# fruit',
       'about the battle of #title#',
       'about love in #adjective.a# time',
-      'about a panorama of #noun.s#',
+      'of a panorama of #noun.s#',
     ],
     sketch_prompt: [
       'of #noun.a#',
@@ -104,6 +111,7 @@ export function getGrammar() {
       'a set of #adjective# #media_type.s#',
       'the biography of #title#',
       'the biography of #name#',
+      'an unfinished #media_type# about #specificThings#',
     ],
     story: [
       '#noun.a#',
