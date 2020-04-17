@@ -15,6 +15,13 @@
   width: 90%;
 }
 
+.generator-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
 .generate {
   background-color: #fe346e;
   border-radius: 2px;
@@ -22,11 +29,13 @@
   box-shadow: 4px 4px #00000055;
   color: #2c003e;
   cursor: pointer;
-  display: block;
   font-size: 20px;
-  margin: auto;
+  margin: 10px;
   outline: none;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   transition-duration: 0.3s;
 }
 
@@ -42,8 +51,10 @@
 
 .credits {
   position: absolute;
+  display: flex;
+  justify-content: flex-end;
   bottom: 1%;
-  right: 5%;
+  right: 3%;
   color: #d2fafb;
   font-size: 16px;
   text-shadow: 4px 4px #00000055;

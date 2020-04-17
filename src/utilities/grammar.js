@@ -9,11 +9,9 @@ import verbSingular from '../constants/words/verbSingular';
 import adverbs from '../constants/words/adverbs';
 import specificThings from '../constants/words/specificThings';
 
-export function getGrammar() {
-  const result = createGrammar({
-    origin: '#[#set_art_type#]full_prompt#',
-    full_prompt: '#art_style.capitalize# #art_type.a# #prompt#',
-    art_style: ['paint', 'draw', 'sketch', 'make', 'create'],
+function getGrammar() {
+  const grammar = createGrammar({
+    artPrompt: '[#set_art_type#]#art_style.capitalize# #art_type.a# #prompt#',
     set_art_type: [
       '[art_type:poster][media_type:movie,show][prompt:#video_prompt#]',
       '[art_type:game cartridge,game case,game title screen][media_type:game][prompt:#game_prompt#]',
@@ -26,6 +24,21 @@ export function getGrammar() {
       '[art_type:comic,#comic_panel_length# panel comic][media_type:comic][prompt:#comic_prompt#]',
       '[art_type:book cover,book spine][media_type:book][prompt:#book_prompt#]',
     ],
+    art_style: [
+      'paint',
+      'draw',
+      'sketch',
+      'make',
+      'create',
+      'create digital art of',
+    ],
+    sketchPrompt:
+      '[#setSketchType#]#sketchStyle.capitalize# #art_type.a# #prompt#',
+    setSketchType: [
+      '[art_type:quick doodle,sketch,blind contour][media_type:doodle][prompt:#sketch_prompt#]',
+      '[art_type:lot of,ton of,few][media_type:many][prompt:#many_prompt#]',
+    ],
+    sketchStyle: ['draw', 'sketch', 'make', 'create'],
     generic_prompts: [
       '#for_of# #media_type.a# that looks #adjective#',
       '#for_of# #media_type.a# about #story#',
@@ -292,6 +305,14 @@ export function getGrammar() {
     specificThings: specificThings,
   });
 
-  result.addModifiers(baseEngModifiers);
-  return result.flatten('#origin#');
+  grammar.addModifiers(baseEngModifiers);
+  return grammar;
+}
+
+export function getArtPrompt() {
+  return getGrammar().flatten('#artPrompt#');
+}
+
+export function getSketchPrompt() {
+  return getGrammar().flatten('#sketchPrompt#');
 }

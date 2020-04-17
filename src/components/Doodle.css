@@ -1,0 +1,43 @@
+@keyframes image-swap {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+}
+
+.images {
+  width: 48px;
+}
+
+.images img {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+}
+
+.first {
+  animation-name: image-swap;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-timing-function: steps(1, start);
+  animation-iteration-count: infinite;
+}
+.second {
+  animation-name: image-swap;
+  animation-duration: 0.5s;
+  animation-delay: 0.166666s;
+  animation-timing-function: steps(1, start);
+  animation-iteration-count: infinite;
+}
+.third {
+  animation-name: image-swap;
+  animation-duration: 0.5s;
+  animation-delay: 0.333333s;
+  animation-timing-function: steps(1, start);
+  animation-iteration-count: infinite;
+}
