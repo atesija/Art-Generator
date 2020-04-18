@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import { getArtPrompt, getSketchPrompt } from '../utilities/grammar';
+import {
+  getArtPrompt,
+  getSketchPrompt,
+  getComicPrompt,
+} from '../utilities/grammar';
 import Doodle from './Doodle';
 import { Sketch1, Sketch2, Sketch3 } from '../images/index';
 
@@ -21,6 +25,12 @@ export default () => {
           onClick={() => setPrompt(getSketchPrompt())}
         >
           Sketch
+        </button>
+        <button
+          className="generate"
+          onClick={() => setPrompt(getComicPrompt())}
+        >
+          Comic
         </button>
       </div>
       <div className="credits">

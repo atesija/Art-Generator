@@ -39,6 +39,8 @@ function getGrammar() {
       '[art_type:lot of,ton of,few][media_type:many][prompt:#many_prompt#]',
     ],
     sketchStyle: ['draw', 'sketch', 'make', 'create'],
+    comicPrompt:
+      '[art_type:comic,#comic_panel_length# panel comic][media_type:comic][prompt:#comic_prompt#]#sketchStyle.capitalize# #art_type.a# #prompt#',
     generic_prompts: [
       '#for_of# #media_type.a# that looks #adjective#',
       '#for_of# #media_type.a# about #story#',
@@ -315,4 +317,8 @@ export function getArtPrompt() {
 
 export function getSketchPrompt() {
   return getGrammar().flatten('#sketchPrompt#');
+}
+
+export function getComicPrompt() {
+  return getGrammar().flatten('#comicPrompt#');
 }
