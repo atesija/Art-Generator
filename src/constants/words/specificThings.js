@@ -22,4 +22,7 @@ export default [
   'the taste of your favorite food',
   'taking a hot shower on a cold day',
   'jumping in the ocean on a warm day',
+  'eating a donut',
+  'getting bitten by a mosquito',
+  'hanging out around a camp fire',
 ];

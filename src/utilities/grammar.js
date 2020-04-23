@@ -113,6 +113,8 @@ function getGrammar() {
       'of something you can see right now',
       'of your favorite childhood memory',
       'of a nearby person',
+      '#graph#',
+      'about #specificThings#',
     ],
     many_prompt: ['#noun.s#', '#adjective# #noun.s#', '#noun.s# and #noun.s#'],
     comic_prompt: [
@@ -123,6 +125,7 @@ function getGrammar() {
       'about a bond between #noun# and #noun#',
       'about something that bothers you',
       'about #specificThings#',
+      'about the failure of a business run by #noun.s#',
     ],
     book_prompt: [
       '#generic_prompts#',
@@ -135,6 +138,12 @@ function getGrammar() {
       'the biography of #title#',
       'the biography of #name#',
       'an unfinished #media_type# about #specificThings#',
+    ],
+    graph: [
+      'of a graph showing the relationship between #noun.s# and #noun.s#',
+      'of a pie chart showing a sales breakdown of #noun.s#',
+      'of a chart showing the business breakdown for #adjective.capitalize##space_dash##noun.capitalize# inc.',
+      'of a venn diagram showing the relationship between #noun.s#, #noun.s#, and #noun.s#',
     ],
     story: [
       '#noun.a#',
