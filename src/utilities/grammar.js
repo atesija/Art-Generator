@@ -23,6 +23,7 @@ function getGrammar() {
       '[art_type:lot of,ton of,few][media_type:many][prompt:#many_prompt#]',
       '[art_type:comic,#comic_panel_length# panel comic][media_type:comic][prompt:#comic_prompt#]',
       '[art_type:book cover,book spine][media_type:book][prompt:#book_prompt#]',
+      '[art_type:slide][media_type:graph,venn diagram,chart,pie chart][prompt:#slide_prompt#]',
     ],
     art_style: [
       'paint',
@@ -113,7 +114,6 @@ function getGrammar() {
       'of something you can see right now',
       'of your favorite childhood memory',
       'of a nearby person',
-      '#graph#',
       'about #specificThings#',
     ],
     many_prompt: ['#noun.s#', '#adjective# #noun.s#', '#noun.s# and #noun.s#'],
@@ -139,11 +139,11 @@ function getGrammar() {
       'the biography of #name#',
       'an unfinished #media_type# about #specificThings#',
     ],
-    graph: [
-      'of a graph showing the relationship between #noun.s# and #noun.s#',
-      'of a pie chart showing a sales breakdown of #noun.s#',
-      'of a chart showing the business breakdown for #adjective.capitalize##space_dash##noun.capitalize# inc.',
-      'of a venn diagram showing the relationship between #noun.s#, #noun.s#, and #noun.s#',
+    slide_prompt: [
+      'of a #media_type# showing the relationship between #noun.s# and #noun.s#',
+      'of a #media_type# showing a sales breakdown of #noun.s#',
+      'of a #media_type# showing the business breakdown for #adjective.capitalize##space_dash##noun.capitalize# inc.',
+      'of a #media_type# showing the relationship between #noun.s#, #noun.s#, and #noun.s#',
     ],
     story: [
       '#noun.a#',
