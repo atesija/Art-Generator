@@ -1,4 +1,4 @@
-import { createGrammar, baseEngModifiers } from 'tracery-grammar';
+import { createGrammar } from '../packages/tracery2/tracery/tracery';
 import adjectives from '../constants/words/adjectives';
 import nouns from '../constants/words/nouns';
 import verbs from '../constants/words/verbs';
@@ -316,7 +316,7 @@ function getGrammar() {
     specificThings: specificThings,
   });
 
-  grammar.addModifiers(baseEngModifiers);
+  //grammar.addModifiers(baseEngModifiers);
   return grammar;
 }
 
